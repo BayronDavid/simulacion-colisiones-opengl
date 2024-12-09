@@ -3,6 +3,8 @@
 
 Este proyecto implementa una simulación gráfica interactiva utilizando **C**, **OpenGL**, y **SDL2**, donde múltiples pelotas rebotan dentro de un cubo tridimensional. El propósito es demostrar conocimientos avanzados en programación en C, computación gráfica, física básica y renderizado 3D.
 
+![Simulación de pelotas rebotando](assets/simulation.gif)
+
 ---
 
 ## 🎯 **Características del Proyecto**
