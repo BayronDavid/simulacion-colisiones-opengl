@@ -1,0 +1,29 @@
+{
+  "name": "OpenGL C Devcontainer",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": [
+    "ms-vscode.cpptools",
+    "ms-vscode.cmake-tools"
+  ],
+  "containerEnv": {
+    "LIBGL_ALWAYS_INDIRECT": "1",
+    "DISPLAY": "172.23.48.1:1"
+  },
+  "remoteUser": "vscode",
+  "runArgs": [
+    "--env",
+    "DISPLAY",
+    "--env",
+    "LIBGL_ALWAYS_INDIRECT=1",
+    "--env",
+    "NO_AT_BRIDGE=1",
+    "--net=host"
+  ],
+  "postCreateCommand": "bash -c 'echo \"Ambiente listo\"'"
+}

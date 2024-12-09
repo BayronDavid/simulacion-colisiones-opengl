@@ -1,0 +1,5 @@
+export LIBGL_ALWAYS_INDIRECT=1
+export DISPLAY=172.23.48.1:1
+
+gcc -o sdl_opengl_simple sdl_prueba.c -lSDL2 -lGLEW -lGL
+./sdl_prueba 
