@@ -5,7 +5,6 @@
 #include <math.h>
 #include <time.h>
 
-// Constantes de la simulación
 #define NUM_BALLS 5
 #define CUBE_SIZE 2.0f // Cubo de [-1,1] en x,y,z
 #define GRAVITY -0.8f  // Gravedad opcional en Y
@@ -15,7 +14,6 @@
 #define FPS 60
 #define FRAME_DELAY (1000 / FPS)
 
-// Estructura para una pelota
 typedef struct
 {
     float x, y, z;    // Posición
@@ -24,18 +22,14 @@ typedef struct
     float color[3];   // Color (RGB)
 } Ball;
 
-// Variables globales
 static Ball balls[NUM_BALLS];
 static int running = 1;
 
-// Variables de cámara
 static float cameraRotX = 20.0f;
 static float cameraRotY = -30.0f;
 
-// Gravedad habilitada o no
 static int useGravity = 1;
 
-// Función para inicializar las pelotas con valores aleatorios
 void initBalls()
 {
     srand((unsigned int)time(NULL));
@@ -56,11 +50,9 @@ void initBalls()
     }
 }
 
-// Función para dibujar una esfera (utilizando glut-like, pero lo haremos a mano)
 void drawSphere(float r, int lats, int longs)
 {
     // Aproximación de esfera usando coordenadas esféricas
-    // Para simplificar, usar immediate mode
     for (int i = 0; i <= lats; i++)
     {
         float lat0 = M_PI * (-0.5f + (float)(i - 1) / lats);
@@ -88,7 +80,6 @@ void drawSphere(float r, int lats, int longs)
     }
 }
 
-// Función para dibujar el cubo (solo las aristas internas)
 void drawCube(float size)
 {
     float half = size / 2.0f;
@@ -312,7 +303,6 @@ int main(int argc, char *argv[])
         float dt = (frameStart - lastTime) / 1000.0f;
         lastTime = frameStart;
 
-        // Manejo de eventos
         SDL_Event event;
         while (SDL_PollEvent(&event))
         {
